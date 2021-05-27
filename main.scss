@@ -1,4 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import './sass/variables';
+@use 'sass:list';
+
+
+html, body {
+    font-size: 15px;
+}
+
+body {
+    font-family: 'Poppins', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+}
+
+.header {
+    width: 82%;
+    text-align: center;
+    margin: 5.5em auto 5em;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em;
+    font-weight: 200;
+    color: $very-dark-blue;
+
+    &__highlight {
+        font-weight: 600;
+    }
+}
+
+.description {
+    color: $grayish-blue;
+    font-size: 1em;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 85%;
+    grid-template-rows: repeat(4, 15rem);
+    gap: 1.7rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.card {
+    width: 100%;
+    border-radius: 0.75rem;
+    box-shadow: 5px 2px 14px $grayish-blue;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                top: -4px;
+                left: -4px;
+                border: 4px solid nth($card-border-colors, $i);
+            }
+        }
+    }
+
+    &__title {
+        color: $very-dark-blue;
+        font-size: 1.38rem;
+        font-weight: 600;
+        margin-top: 1.38rem;
+        margin-bottom: .2rem;
+    }
+
+    &__info {
+        color: $grayish-blue;
+        font-size: 0.875rem;
+        font-weight: 400;
+        margin-top: 0;
+    }
+
+    &__img {
+        width: 3.875em;
+        position: absolute;
+        right: 1.8em;
+        bottom: 1.8em;
+    }
+}
+
 .attribution { 
+    margin-top: 6em;
+    margin-bottom: 1.5em;
     font-size: 11px; 
     text-align: center; 
     a { 
