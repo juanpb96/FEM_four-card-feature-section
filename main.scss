@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
 @import './sass/variables';
-@use 'sass:list';
 
 
 html, body {
@@ -102,9 +101,30 @@ body {
 .attribution { 
     margin-top: 6em;
     margin-bottom: 1.5em;
-    font-size: 11px; 
+    font-size: 0.7rem; 
     text-align: center; 
     a { 
         color: hsl(228, 45%, 44%); 
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    html, body {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 90%;
+        margin: auto;
+    }
+
+    .description{
+        width: 60%;
+        margin: auto;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 15rem 15rem;
     }
 }
